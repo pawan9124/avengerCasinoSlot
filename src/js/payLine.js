@@ -21,11 +21,52 @@ static caclulate3Line(array,level){
     //   ||((array[2][2] === array[3][1]) && ( array[2][2] === array[4][0]))){
       console.error("LINE 3 hit");
         let count = 3;
+        let getCharacterImage = require(`../assets/symbols/${array[2][2]}.png`); 
         //counting the appeareance of the symbols
-        if(array[0][0] === array[3][1])
-          count++;
-        if(array[0][0] === array[4][0])
-          count++;
+        if(array[2][2] === array[1][1] && array[2][2] === array[0][0]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(1)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(3)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][2] === array[3][1]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+                node4[0].src = getCharacterImage;
+                if(array[2][2] === array[4][0]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(1)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
+
+        if(array[2][2] === array[3][1] && array[2][2] === array[4][0]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(1)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(3)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][2] === array[1][1]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+                node4[0].src = getCharacterImage;
+                if(array[2][2] === array[0][0]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(1)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
+        
 
         let getValue = valueJson[array[0][0]][count];
         console.log("getValue",getValue,"level",level);
@@ -33,8 +74,10 @@ static caclulate3Line(array,level){
         let winAmount = getValue * level;
 
         console.log("totalCount",count,"Amount",winAmount);
+        document.getElementById("id3").classList.add("glowBackground");
+        document.getElementById("id6").classList.add("glowBackground");
         return winAmount;
-        
+        console.log("$(.demo)",$('.demo'));
     // }else{
     //   return 0;
     // }
@@ -45,18 +88,59 @@ static caclulate3Line(array,level){
     if(((array[0][0] === array[1][0]) && ( array[0][0] === array[2][0]))
       ||((array[2][0] === array[3][0]) && ( array[2][0] === array[4][0]))){
       console.error("LINE 2 hit");
-
         let count = 3;
+        let getCharacterImage = require(`../assets/symbols/${array[2][0]}.png`); 
         //counting the appeareance of the symbols
-        if(array[0][0] === array[3][0])
-          count++;
-        if(array[0][0] === array[4][0])
-          count++;
+        if(array[2][0] === array[0][0] && array[2][0] === array[1][0]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(1)");
+          node1[0].src = getCharacterImage;
+
+          let node2 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(1)");
+          node2[0].src = getCharacterImage;
+
+          let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(1)");
+          node3[0].src = getCharacterImage;
+
+          if(array[2][0] === array[3][0]){
+            count++;
+            let node4 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(1)");
+            node4[0].src= getCharacterImage;
+            if(array[2][0] === array[4][0]){
+              count++;
+              let node5 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(1)");
+              node5[0].src= getCharacterImage;
+            }
+          }
+        }
+
+        if(array[2][0] === array[3][0] && array[2][0] === array[4][0]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(1)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(1)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(1)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][0] === array[1][0]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(1)");
+                node4[0].src = getCharacterImage;
+                if(array[2][0] === array[0][0]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(1)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
 
         let getValue = valueJson[array[0][0]][count];
 
         let winAmount = getValue * level;
 
+        document.getElementById("id2").classList.add("glowBackground");
+        document.getElementById("id7").classList.add("glowBackground");
         console.log("totalCount",count,"Amount",winAmount);
         return winAmount;
         
@@ -71,16 +155,58 @@ static caclulate3Line(array,level){
       ||((array[2][1] === array[3][1]) && ( array[2][1] === array[4][1]))){
       console.error("LINE 1 hit");
         let count = 3;
+        let getCharacterImage = require(`../assets/symbols/${array[2][1]}.png`); 
         //counting the appeareance of the symbols
-        if(array[0][1] === array[3][1])
-          count++;
-        if(array[0][1] === array[4][1])
-          count++;
+        if(array[2][1] === array[0][1] && array[2][0] === array[1][1]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(2)");
+          node1[0].src = getCharacterImage;
+
+          let node2 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+          node2[0].src = getCharacterImage;
+
+          let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(2)");
+          node3[0].src = getCharacterImage;
+
+          if(array[2][1] === array[3][1]){
+            count++;
+            let node4 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+            node4[0].src= getCharacterImage;
+            if(array[2][1] === array[4][1]){
+              count++;
+              let node5 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(2)");
+              node5[0].src= getCharacterImage;
+            }
+          }
+        }
+
+        if(array[2][1] === array[3][1] && array[2][0] === array[4][1]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(2)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(2)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][1] === array[1][1]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+                node4[0].src = getCharacterImage;
+                if(array[2][0] === array[0][1]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(2)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
 
         let getValue = valueJson[array[0][1]][count];
 
         let winAmount = getValue * level;
 
+        document.getElementById("id1").classList.add("glowBackground");
+        document.getElementById("id8").classList.add("glowBackground");
         console.log("totalCount",count,"Amount",winAmount);
         return winAmount;
         
@@ -95,16 +221,57 @@ static caclulate3Line(array,level){
       ||((array[2][2] === array[3][2]) && ( array[2][2] === array[4][2]))){
       console.error("LINE 4 hit");
         let count = 3;
+        let getCharacterImage = require(`../assets/symbols/${array[2][2]}.png`); 
         //counting the appeareance of the symbols
-        if(array[0][2] === array[3][2])
-          count++;
-        if(array[0][2] === array[4][2])
-          count++;
+        if(array[2][2] === array[0][2] && array[2][2] === array[1][2]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(3)");
+          node1[0].src = getCharacterImage;
+
+          let node2 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(3)");
+          node2[0].src = getCharacterImage;
+
+          let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(3)");
+          node3[0].src = getCharacterImage;
+
+          if(array[2][2] === array[3][2]){
+            count++;
+            let node4 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(3)");
+            node4[0].src= getCharacterImage;
+            if(array[2][1] === array[4][2]){
+              count++;
+              let node5 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(3)");
+              node5[0].src= getCharacterImage;
+            }
+          }
+        }
+
+        if(array[2][2] === array[3][2] && array[2][2] === array[4][2]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(3)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(3)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(3)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][2] === array[1][2]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(3)");
+                node4[0].src = getCharacterImage;
+                if(array[2][2] === array[0][2]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(3)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
 
         let getValue = valueJson[array[0][2]][count];
 
         let winAmount = getValue * level;
-
+        document.getElementById("id4").classList.add("glowBackground");
+        document.getElementById("id9").classList.add("glowBackground");
         console.log("totalCount",count,"Amount",winAmount);
         return winAmount;
         
@@ -119,16 +286,58 @@ static caclulate3Line(array,level){
       ||((array[2][0] === array[3][1]) && ( array[2][0] === array[4][2]))){
       console.error("LINE 5 hit");
         let count = 3;
+        let getCharacterImage = require(`../assets/symbols/${array[2][0]}.png`); 
         //counting the appeareance of the symbols
-        if(array[0][2] === array[3][1])
-          count++;
-        if(array[0][2] === array[4][2])
-          count++;
+        if(array[2][0] === array[0][2] && array[2][0] === array[1][1]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(3)");
+          node1[0].src = getCharacterImage;
+
+          let node2 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+          node2[0].src = getCharacterImage;
+
+          let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(1)");
+          node3[0].src = getCharacterImage;
+
+          if(array[2][0] === array[3][1]){
+            count++;
+            let node4 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+            node4[0].src= getCharacterImage;
+            if(array[2][0] === array[4][2]){
+              count++;
+              let node5 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(3)");
+              node5[0].src= getCharacterImage;
+            }
+          }
+        }
+
+        if(array[2][0] === array[3][1] && array[2][0] === array[4][2]){
+          let node1 = document.querySelectorAll("#reels > div:nth-child(5) > div > img:nth-child(3)");
+            node1[0].src = getCharacterImage;
+
+            let node2 = document.querySelectorAll("#reels > div:nth-child(4) > div > img:nth-child(2)");
+            node2[0].src = getCharacterImage;
+
+            let node3 = document.querySelectorAll("#reels > div:nth-child(3) > div > img:nth-child(1)");
+            node3[0].src = getCharacterImage;
+
+              if(array[2][0] === array[1][1]){
+                count++;
+                let node4 = document.querySelectorAll("#reels > div:nth-child(2) > div > img:nth-child(2)");
+                node4[0].src = getCharacterImage;
+                if(array[2][0] === array[0][2]){
+                  count++;
+                  let node5 = document.querySelectorAll("#reels > div:nth-child(1) > div > img:nth-child(3)");
+                  node5[0].src = getCharacterImage;
+                }
+              }
+        }
+
 
         let getValue = valueJson[array[0][2]][count];
 
         let winAmount = getValue * level;
-
+        document.getElementById("id5").classList.add("glowBackground");
+        document.getElementById("id10").classList.add("glowBackground");
         console.log("totalCount",count,"Amount",winAmount);
         return winAmount;
         

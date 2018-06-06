@@ -140,4 +140,19 @@ input[type="checkbox"] {
   text-align:center;
   border-radius:5px;
 }
+.glowBackground {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ccc;
+  animation: glow 1s infinite alternate;
+}
 
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #ffe000;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #ffe000;
+  }
+}

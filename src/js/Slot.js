@@ -186,6 +186,12 @@ playBackgroundMusic(flag){
     this.playBackgroundMusic(false);
     document.getElementById("displayWin").value =  0;
     document.getElementById("spinImage").classList.add("spinImageCircle");
+    var childDivs = document.getElementById('border').getElementsByTagName('img');
+      for( let i=0; i< childDivs.length; i++ ){
+        console.log("childDivs[i]",childDivs[i]);
+        childDivs[i].classList.remove("glowBackground");
+      }
+      document.getElementById("displayWin").classList.remove("glowBackground");
     console.log('SPIN START');
   }
 
@@ -201,6 +207,7 @@ playBackgroundMusic(flag){
     let winAmount = payLine.calculateWin(this.nextSymbols);
      if(winAmount !== '' && winAmount !== undefined && winAmount > 0){
       totalAmount = totalAmount + winAmount;
+      document.getElementById("displayWin").classList.add("glowBackground");
       console.log("winAmount2",winAmount);
      }
      console.log("TotalAmount2",totalAmount);
