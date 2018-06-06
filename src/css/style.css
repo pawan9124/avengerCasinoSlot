@@ -1,0 +1,143 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-image: url('../assets/bg.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    background-image: url('../assets/bg_small.jpg');
+  }
+}
+
+#reels {
+  display: flex;
+  width: 100vw;
+  height: calc((3 / 5) * 100vw);
+  max-height: calc(90vh - 50px);
+  max-width: calc((5 / 3) * (90vh - 50px));
+}
+
+.reel {
+  overflow: hidden;
+  width: 20%;
+  height: 100%;
+}
+
+.reel > .icons > img {
+  width: calc(100% + 6px);
+  margin: -3px 0 0 -3px;
+  height: auto;
+}
+
+#controls {
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image:url('../assets/background_control.jpg');
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+#controls label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#controls label input {
+  margin-right: 2px;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+#jackpot {
+  color: #D5AD6D;
+  font-size: 40px;
+  text-align: center;
+}
+#spin{
+  text-align:center;
+  /*background-image:url('../assets/icons/captain-america-shield-metal-base1.png');*/
+  border: none;
+  color:orange;
+  text-shadow: 2px 2px #ffe000;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  background-position: center; 
+}
+#wagerInput{
+  width:51px;
+  text-align:center;
+  border-radius:5px;
+}
+#levelInput{
+  width:51px;
+  text-align:center;
+  border-radius:5px;
+}
+
+#displayBet{
+  width:60px;
+  text-align:center;
+  border-radius:5px;
+}
+
+#border{
+  padding:15px;
+  background:linear-gradient(90deg, #2984e2, #ca1750);
+  border:2px solid grey;
+  display:flex;
+}
+.sideBatch-left{
+  display:flex;
+  margin-right:10px;
+  margin-top:60px;
+}
+
+.sideBatch-right{
+  display:flex;
+  margin-left:10px;
+  margin-top:60px;
+}
+#controls > label{
+  font-size:15px;
+  font-family: cursive;
+  color: beige;
+}
+.spinImageCircle{
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 1s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#displayWin{
+  width:51px;
+  text-align:center;
+  border-radius:5px;
+}
+#totalWager{
+  width:51px;
+  text-align:center;
+  border-radius:5px;
+}
+
