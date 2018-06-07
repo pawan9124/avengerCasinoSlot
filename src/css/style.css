@@ -2,7 +2,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 1rem;
-  background-image: url('../assets/bg.jpg');
+  // background-image: url('../assets/bg.jpg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -165,6 +165,7 @@ input[type="checkbox"] {
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+    z-index:-1;
+    min-width: 1280px; 
+    min-height: 620px%;
 }

@@ -55,6 +55,9 @@ export default class Slot {
 
     this.banner = document.getElementById('banner');
     banner.src = require('../assets/banner.png');
+
+    this.myVideo = document.getElementById('myVideo');
+    myVideo.src = require('../assets/background.mp4');
     
     this.spinButton = document.getElementById('spin');
     this.spinButton.addEventListener('click', () => {this.spin()});
