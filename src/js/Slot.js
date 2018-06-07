@@ -29,7 +29,7 @@ function  sound(src) {
 export default class Slot {
   constructor(domElement) {
     Symbol.preload();
-    // this.playBackgroundMusic(true);
+    this.playBackgroundMusic(true);
 
     this.currentSymbols = [
       ['death_star', 'death_star', 'death_star'],
@@ -49,7 +49,7 @@ export default class Slot {
 
     this.container = domElement;
 
-    console.log("domElement==>",domElement);
+    // console.log("domElement==>",domElement);
 
     this.reels = Array.from(this.container.getElementsByClassName('reel')).map((reelContainer, idx) => new Reel(reelContainer, idx, this.currentSymbols[idx]));
 
@@ -134,13 +134,27 @@ export default class Slot {
     this.id_20 = document.getElementById('20');
     this.id_20.addEventListener('click', () => payLine.displayLine10());
 
+    this.info = document.getElementById('info');
+    // this.info.addEventListener('click', () => this.openInfo());
+
+    this.speaker = document.getElementById('speaker');
+    this.speaker.addEventListener('click', () => this.toggleSpeaker());
+
+    this.flagSpeaker = true;
+
     //**********************************************************************
     //to sync the images in the game 
     this.decreaseValue.src = require('../assets/icons/minus.png');
     this.increaseValue.src = require('../assets/icons/add.png'); 
-    
+
+    this.speaker.src = require('../assets/icons/speaker_on.png');
+    this.info.src = require('../assets/icons/information.png');
+
     this.decreaseLevel.src = require('../assets/icons/minus.png');
     this.increaseLevel.src = require('../assets/icons/add.png');    
+
+    this.scoreboard = document.getElementById('scoreboard');
+    scoreboard.src = require('../assets/scorecard.png');
 
     this.id3 = document.getElementById('id3');
     id3.src = require('../assets/icons/Avengers-Black-Widow-icon.png');
@@ -209,13 +223,13 @@ export default class Slot {
   }
 
 playBackgroundMusic(flag){
-   console.log("Flag",flag);
+   // console.log("Flag",flag);
    if(flag === true){
-    console.log("Flag","true");
+    // console.log("Flag","true");
     backgroundMusic.play();
    }
   else{
-    console.log("flag false")
+    // console.log("flag false")
    backgroundMusic.stop();
   }
     
@@ -240,7 +254,7 @@ playBackgroundMusic(flag){
       [Symbol.random(), Symbol.random(), Symbol.random()],
     ];
 
-    console.log("Reels",reels);
+    // console.log("Reels",reels);
 
     return Promise.all(this.reels.map(reel => {
       reel.renderSymbols(this.currentSymbols[reel.idx], this.nextSymbols[reel.idx]);
@@ -255,11 +269,11 @@ playBackgroundMusic(flag){
     document.getElementById("spinImage").classList.add("spinImageCircle");
     var childDivs = document.getElementById('border').getElementsByTagName('img');
       for( let i=0; i< childDivs.length; i++ ){
-        console.log("childDivs[i]",childDivs[i]);
+        // console.log("childDivs[i]",childDivs[i]);
         childDivs[i].classList.remove("glowBackground");
       }
       document.getElementById("displayWin").classList.remove("glowBackground");
-    console.log('SPIN START');
+    // console.log('SPIN START');
   }
 
   onSpinEnd() {
@@ -267,17 +281,17 @@ playBackgroundMusic(flag){
     this.playBackgroundMusic(true);
     let betAmount = parseInt(document.getElementById("totalWager").value);
     let totalAmount = parseInt(document.getElementById("displayBet").value);
-    console.log("TotalAmount1",totalAmount);
+    // console.log("TotalAmount1",totalAmount);
     totalAmount = totalAmount - betAmount;
-    console.log('CurrentSymbols',this.currentSymbols);
-    console.log('nextSymbols',this.nextSymbols);
+    // console.log('CurrentSymbols',this.currentSymbols);
+    // console.log('nextSymbols',this.nextSymbols);
     let winAmount = payLine.calculateWin(this.nextSymbols);
      if(winAmount !== '' && winAmount !== undefined && winAmount > 0){
       totalAmount = totalAmount + winAmount;
       document.getElementById("displayWin").classList.add("glowBackground");
-      console.log("winAmount2",winAmount);
+      // console.log("winAmount2",winAmount);
      }
-     console.log("TotalAmount2",totalAmount);
+     // console.log("TotalAmount2",totalAmount);
      document.getElementById("displayBet").value =  totalAmount;
      document.getElementById("displayWin").value =  winAmount;
      document.getElementById("spinImage").classList.remove("spinImageCircle");
@@ -338,5 +352,17 @@ playBackgroundMusic(flag){
     levelCount = levelCount/10;
     document.getElementById('totalWager').value =  totalAmount;
     document.getElementById('levelInput').value = levelCount;
+  }
+
+  toggleSpeaker(){
+    if(this.flagSpeaker === true){
+      this.speaker.src = require('../assets/icons/speaker_off.png');
+      this.playBackgroundMusic(false);
+      this.flagSpeaker = false;
+    }else{
+      this.speaker.src = require('../assets/icons/speaker_on.png');
+      this.playBackgroundMusic(true);
+      this.flagSpeaker = true;
+    }
   }
 }

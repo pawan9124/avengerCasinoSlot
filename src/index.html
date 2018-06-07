@@ -1,85 +1,130 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>HTML 5 Slot Machine</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css" integrity="sha256-pz64SJ9vnWkyhtOo7mtiOekWuFo7YIGXrzXjElYzcWA=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="slot">
-     
-      <div id="jackpot"><img id="banner" src=""></div>
-      <div id="border" class="demo">
-        <div>
-          <span class="sideBatch-left" id="3"><img id="id3" src=""></span>
-          <span class="sideBatch-left" id="2"><img id="id2" src=""></span>
-          <span class="sideBatch-left" id="1"><img id="id1" src=""></span>
-          <span class="sideBatch-left" id="4"><img id="id4" src=""></span>
-          <span class="sideBatch-left" id="5"><img id="id5" src=""></span>
-          <span class="sideBatch-left" id="11"><img id="id11" src=""></span>
-          <span class="sideBatch-left" id="12"><img id="id12" src=""></span>
-          <span class="sideBatch-left" id="13"><img id="id13" src=""></span>
-          <span class="sideBatch-left" id="14"><img id="id14" src=""></span>
-          <span class="sideBatch-left" id="15"><img id="id15" src=""></span>
+        <div id="jackpot"><img id="banner" src=""></div>
+        <div class="detail">
+            <i><img src="" id="speaker" title="Background Music"></i>
+            <i><img src="" id="info" title="Score Infos" ></i>
         </div>
-          <div id="reels">
-            <div class="reel"></div>
-            <div class="reel"></div>
-            <div class="reel"></div>
-            <div class="reel"></div>
-            <div class="reel"></div>
-          </div>
-        <div>
-          <span class="sideBatch-right" id="6"><img id="id6" src=""></span>
-          <span class="sideBatch-right" id="7"><img id="id7" src=""></span>
-          <span class="sideBatch-right" id="8"><img id="id8" src=""></span>
-          <span class="sideBatch-right" id="9"><img id="id9" src=""></span>
-          <span class="sideBatch-right" id="10"><img id="id10" src=""></span>
-          <span class="sideBatch-right" id="16"><img id="id16" src=""></span>
-          <span class="sideBatch-right" id="17"><img id="id17" src=""></span>
-          <span class="sideBatch-right" id="18"><img id="id18" src=""></span>
-          <span class="sideBatch-right" id="19"><img id="id19" src=""></span>
-          <span class="sideBatch-right" id="20"><img id="id20" src=""></span>
-      </div>
-      </div>
-      <div id="controls">
-        <label>
-          $Amount: 
-          <input type="text"  id="displayBet" value="500" disabled="true">
-        </label>
-        <label>
-          $Bet:
-          <input type="text"  id="totalWager" value="1" disabled="true">
-        </label>
-        <label>
-          Level:
-          <i><img src="" id="decreaseLevel"></i>
-          <input type="text"  id="wagerInput" value="1" disabled="true">
-          <i><img src="" id="increaseLevel"></i>
-        </label>
-        <label>
-        Spin: <button type="button" id="spin"><img id="spinImage" class="" src=""></button>
-      </label>
-        <label>
-          Coin Value:
-          <i><img class="minusBtn" id="decreaseValue" src=""></i>
-          <input type="text"  id="levelInput" value="0.1" disabled="true">
-          <i><img class="addBtn" id="increaseValue" src=""></i>
-        </label>
-        <label>
-          $Win:
-          <input type="text"  id="displayWin" value="0" disabled="true">
-        </label>
-        <label>
-          <input type="checkbox" name="autoplay" id="autoplay">
-          Autoplay
-        </label>
-      </div>
-       <video autoplay muted loop id="myVideo">
-        <source  src="" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
+        <div id="border" class="demo">
+            <div>
+                <span class="sideBatch-left"  title="click"id="3"><img id="id3" src=""></span>
+                <span class="sideBatch-left"  title="click"id="2"><img id="id2" src=""></span>
+                <span class="sideBatch-left"  title="click"id="1"><img id="id1" src=""></span>
+                <span class="sideBatch-left"  title="click"id="4"><img id="id4" src=""></span>
+                <span class="sideBatch-left"  title="click"id="5"><img id="id5" src=""></span>
+                <span class="sideBatch-left"  title="click"id="11"><img id="id11" src=""></span>
+                <span class="sideBatch-left"  title="click"id="12"><img id="id12" src=""></span>
+                <span class="sideBatch-left"  title="click"id="13"><img id="id13" src=""></span>
+                <span class="sideBatch-left"  title="click"id="14"><img id="id14" src=""></span>
+                <span class="sideBatch-left"  title="click"id="15"><img id="id15" src=""></span>
+            </div>
+            <div id="reels">
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+            </div>
+            <div>
+                <span class="sideBatch-right" title="click" id="6"><img id="id6" src=""></span>
+                <span class="sideBatch-right" title="click" id="7"><img id="id7" src=""></span>
+                <span class="sideBatch-right" title="click" id="8"><img id="id8" src=""></span>
+                <span class="sideBatch-right" title="click" id="9"><img id="id9" src=""></span>
+                <span class="sideBatch-right" title="click" id="10"><img id="id10" src=""></span>
+                <span class="sideBatch-right" title="click" id="16"><img id="id16" src=""></span>
+                <span class="sideBatch-right" title="click" id="17"><img id="id17" src=""></span>
+                <span class="sideBatch-right" title="click" id="18"><img id="id18" src=""></span>
+                <span class="sideBatch-right" title="click" id="19"><img id="id19" src=""></span>
+                <span class="sideBatch-right" title="click" id="20"><img id="id20" src=""></span>
+            </div>
+        </div>
+        <div id="controls">
+            <label>
+                $Amount:
+                <input type="text" id="displayBet" value="500" disabled="true">
+            </label>
+            <label>
+                $Bet:
+                <input type="text" id="totalWager" value="1" disabled="true">
+            </label>
+            <label>
+                Level:
+                <i><img src="" id="decreaseLevel"></i>
+                <input type="text" id="wagerInput" value="1" disabled="true">
+                <i><img src="" id="increaseLevel"></i>
+            </label>
+            <label>
+                Spin:
+                <button type="button" id="spin"><img id="spinImage" class="" src=""></button>
+            </label>
+            <label>
+                Coin Value:
+                <i><img class="minusBtn" id="decreaseValue" src=""></i>
+                <input type="text" id="levelInput" value="0.1" disabled="true">
+                <i><img class="addBtn" id="increaseValue" src=""></i>
+            </label>
+            <label>
+                $Win:
+                <input type="text" id="displayWin" value="0" disabled="true">
+            </label>
+            <label>
+                <input type="checkbox" name="autoplay" id="autoplay"> Autoplay
+            </label>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h3>Score card</h3>
+                </div>
+                <div class="modal-body">
+                   <img src="" id="scoreboard">
+                </div>
+            </div>
+        </div>
+        <video autoplay muted loop id="myVideo">
+            <source src="" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
     </div>
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WebAnimations&flags=gated"></script>
-  </body>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("info");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+
 </html>
