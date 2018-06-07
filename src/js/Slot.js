@@ -53,6 +53,9 @@ export default class Slot {
 
     this.reels = Array.from(this.container.getElementsByClassName('reel')).map((reelContainer, idx) => new Reel(reelContainer, idx, this.currentSymbols[idx]));
 
+    this.banner = document.getElementById('banner');
+    banner.src = require('../assets/banner.png');
+    
     this.spinButton = document.getElementById('spin');
     this.spinButton.addEventListener('click', () => {this.spin()});
 
@@ -68,14 +71,14 @@ export default class Slot {
     this.decreaseValue = document.getElementById('decreaseValue');
     this.decreaseValue.addEventListener('click', () => this.decreaseValueCount());
 
-    this.id_3 = document.getElementById('3');
-    this.id_3.addEventListener('click', () => payLine.displayLine3());
+    this.id_1 = document.getElementById('1');
+    this.id_1.addEventListener('click', () => payLine.displayLine1());
 
     this.id_2 = document.getElementById('2');
     this.id_2.addEventListener('click', () => payLine.displayLine2());
 
-    this.id_1 = document.getElementById('1');
-    this.id_1.addEventListener('click', () => payLine.displayLine1());
+    this.id_3 = document.getElementById('3');
+    this.id_3.addEventListener('click', () => payLine.displayLine3());
 
     this.id_4 = document.getElementById('4');
     this.id_4.addEventListener('click', () => payLine.displayLine4());
@@ -98,6 +101,37 @@ export default class Slot {
     this.id_10 = document.getElementById('10');
     this.id_10.addEventListener('click', () => payLine.displayLine5());
 
+    this.id_11 = document.getElementById('11');
+    this.id_11.addEventListener('click', () => payLine.displayLine6());
+
+    this.id_12 = document.getElementById('12');
+    this.id_12.addEventListener('click', () => payLine.displayLine7());
+
+    this.id_13 = document.getElementById('13');
+    this.id_13.addEventListener('click', () => payLine.displayLine8());
+
+    this.id_14 = document.getElementById('14');
+    this.id_14.addEventListener('click', () => payLine.displayLine9());
+
+    this.id_15 = document.getElementById('15');
+    this.id_15.addEventListener('click', () => payLine.displayLine10());
+
+    this.id_16 = document.getElementById('16');
+    this.id_16.addEventListener('click', () => payLine.displayLine6());
+
+    this.id_17 = document.getElementById('17');
+    this.id_17.addEventListener('click', () => payLine.displayLine7());
+
+    this.id_18 = document.getElementById('18');
+    this.id_18.addEventListener('click', () => payLine.displayLine8());
+
+    this.id_19 = document.getElementById('19');
+    this.id_19.addEventListener('click', () => payLine.displayLine9());
+
+    this.id_20 = document.getElementById('20');
+    this.id_20.addEventListener('click', () => payLine.displayLine10());
+
+    //**********************************************************************
     //to sync the images in the game 
     this.decreaseValue.src = require('../assets/icons/minus.png');
     this.increaseValue.src = require('../assets/icons/add.png'); 
@@ -134,6 +168,36 @@ export default class Slot {
 
     this.id10 = document.getElementById('id10');
     id10.src = require('../assets/icons/Avengers-Captain-America-icon.png');
+
+    this.id11 = document.getElementById('id11');
+    id11.src = require('../assets/icons/Comics-Avengers-icon.png');
+
+    this.id12 = document.getElementById('id12');
+    id12.src = require('../assets/icons/Avengers-Hawkeye-icon.png');
+
+    this.id13 = document.getElementById('id13');
+    id13.src = require('../assets/icons/Avengers-Nick-Fury-icon.png');
+
+    this.id14 = document.getElementById('id14');
+    id14.src = require('../assets/icons/Avengers-Thor-icon.png');
+
+    this.id15 = document.getElementById('id15');
+    id15.src = require('../assets/icons/Avengers-War-Machine-icon.png');
+
+    this.id16 = document.getElementById('id16');
+    id16.src = require('../assets/icons/Comics-Avengers-icon.png');
+
+    this.id17 = document.getElementById('id17');
+    id17.src = require('../assets/icons/Avengers-Hawkeye-icon.png');
+
+    this.id18 = document.getElementById('id18');
+    id18.src = require('../assets/icons/Avengers-Nick-Fury-icon.png');
+
+    this.id19 = document.getElementById('id19');
+    id19.src = require('../assets/icons/Avengers-Thor-icon.png');
+
+    this.id20 = document.getElementById('id20');
+    id20.src = require('../assets/icons/Avengers-War-Machine-icon.png');
 
     this.spinImage = document.getElementById('spinImage');
     spinImage.src = require('../assets/icons/captain-america-shield-metal-base1.png');
@@ -215,7 +279,7 @@ playBackgroundMusic(flag){
      document.getElementById("displayWin").value =  winAmount;
      document.getElementById("spinImage").classList.remove("spinImageCircle");
 
-    if (this.autoPlayCheckbox.checked) return window.setTimeout(() => this.spin(), 200);
+    if (this.autoPlayCheckbox.checked) return window.setTimeout(() => this.spin(), 5000);
   }
 
   increaseLevelCount() {
